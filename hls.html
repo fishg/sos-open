@@ -2,8 +2,8 @@
 <head>
     <meta charset="UTF-8"/>
     <script>
-        //var videoHlsHost=window.location.host;
-        var videoHlsHost='202.104.126.35:16880';
+        var videoHlsHost=window.location.host;
+        //var videoHlsHost='202.104.126.35:16880';
         var videoRtmpHost='';
         var videoRtspHost='';
         /* 视频的显示宽度,为0表示以列表呈现 */
@@ -134,6 +134,8 @@ function getListOk(h){
                     htmlstr += '<br/>HLS: http://'+videoHlsHost+vsysChannel[j]['recordConfig']['rtspServerURL'];
                     htmlstr += '<br/>RTMP: rtmp://'+videoRtmpHost+'/sos'+vsysChannel[j]['recordConfig']['rtspServerURL'];
                     htmlstr += '<br/>RTSP: rtsp://'+videoRtspHost+vsysChannel[j]['recordConfig']['rtspServerURL'];
+                    htmlstr += '<br/>JPG: http://'+videoHlsHost+vsysChannel[j]['recordConfig']['rtspServerURL']+'?..getsnap=jpg';
+                    htmlstr += '<br/>BMP: http://'+videoHlsHost+vsysChannel[j]['recordConfig']['rtspServerURL']+'?..getsnap=bmp';
                     htmlstr += '<br/>' + vsysChannel[j]['uuid']+'</div>';
                 }
             }
